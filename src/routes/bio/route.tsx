@@ -1,8 +1,10 @@
-import { useLoaderData } from "react-router";
+"use client";
+
+import { useRouteLoaderData } from "react-router";
 import type { BioLoader } from "../../vite-env.d";
 
 export default function Component() {
-  const { data } = useLoaderData<BioLoader>();
+  const { data } = useRouteLoaderData<ReturnType<BioLoader>>("id") as ReturnType<BioLoader>;
   
   return (
     <main className="mx-auto max-w-screen-xl px-4 py-8 lg:py-12">
